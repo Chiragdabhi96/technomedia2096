@@ -1,0 +1,32 @@
+<VirtualHost *:80>
+        ServerName flatswap.exchange
+        ServerAlias www.flatswap.exchange
+        DocumentRoot /var/www/html
+	RewriteEngine on
+	RewriteCond %{SERVER_NAME} =flatswap.exchange
+ 	RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+</VirtualHost>
+
+
+<VirtualHost *:443>
+
+        ServerName flatswap.exchange
+        ServerAlias www.flatswap.exchange
+        DocumentRoot /var/www/html
+        SSLEngine on
+        SSLCertificateFile /var/www/ssl/c55b324e06439012.crt
+        SSLCertificateKeyFile /var/www/ssl/flatswap.key
+        SSLCertificateChainFile /var/www/ssl/gd_bundle-g2-g1.crt
+
+</VirtualHost>
+
+
+<IfModule mod_rewrite.c>
+
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]
+</IfModule>
+
+

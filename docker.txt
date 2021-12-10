@@ -1,0 +1,17 @@
+sudo apt install docker.io   for install docker 
+sudo apt remove docker.io for remove docker
+sudo docker pull ubuntu  for pull image from docker
+docker images for checking images in ubuntu
+sudo docker run -it -d ubuntu  for run image in containers 
+sudo docker ps for running container
+sudo docker ps -a for all container
+sudo docker -it -d --name  conaitner name for create container with name
+
+sudo docker -it -d --name  conaitner -p 80:80 name for create container with name and port
+sudo docker exec -ti container name
+sudo docker stop container id for container stop
+sudo docker start container id for container start
+sudo docker commit container id new image name for saving container
+(example sudo docker commit 123456 testing)
+
+	
